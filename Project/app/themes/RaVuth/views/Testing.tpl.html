@@ -1,0 +1,17 @@
+<div>
+      Name: <input type="text" ng-model="name"/>
+      [ <a ng-click="greet()">greet</a> ]<br/>
+      Contact:
+      <ul>
+        <li ng-repeat="contact in contacts">
+          <select ng-model="contact.type">
+             <option>phone</option>
+             <option>email</option>
+          </select>
+          <input type="text" ng-model="contact.value"/>
+           <button ng-click="clearContact(contact)">clear</button>
+           <button  ng-click="removeContact(contact)">X</button> 
+        </li>
+        <li><button ng-click="addContact()">add</button> </li>
+     </ul>
+</div>

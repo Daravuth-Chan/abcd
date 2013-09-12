@@ -1,0 +1,14 @@
+
+<h1 style="color:#F9F">Information</h1>    
+	<div class="input-append">
+  			<input class="span2" id="appendedInputButton" type="text" ng-model="Search.name">
+  			<button class="btn" type="button" ng-click="StartSearch()">Search</button>
+            <h2 style="color:#CF3">Result</h2>
+            <ul style="color:#CF3; margin-left:10px;font-size:12px">
+
+            	<li ng-repeat = "df in users" style="font-size:12px">
+                	{{ df.Name }} Username : {{df.Username}} City : {{df.City}}
+                </li>
+            </ul>
+	</div>
+    

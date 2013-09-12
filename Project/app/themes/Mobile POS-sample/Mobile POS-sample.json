@@ -1,0 +1,34 @@
+{
+	/*
+	 * Theme name, must be identical to the directory name
+	 */
+	"title" : "Mobile POS sample",
+	"author" : "Chan Daravuth",	
+
+	/*
+	 * files refer to css and js files that your theme requires.
+	 * these paths are relative to the root of your theme directory
+	 */
+	"files" : {
+		"css" : ["css/bootstrap.min", "css/style","css/component","css/default"],
+		"js" : ["js/theme_controllers","js/jquery.nicescroll","js/perfect-scrollbar-0.4.3.with-mousewheel.min",
+				"js/iscroll/iscroll-lite","js/bxslider/jquery.bxslider","js/classie","js/modernizr.custom"]
+	},
+
+	/*
+	 * Routes determine the uri's in your application and here you can map those to layouts, templates and controllers
+	 * on the path and template are required, the rest are optional.
+	 * Because how the paths and routing work, you need run plus.io Frontend on a local server such as xampp (http://www.apachefriends.org/en/xampp.html) or mamp (http://www.mamp.info/en/index.html)
+	 */
+	"routes" : [
+		{"path":"/Home",		"layout":"layouts/main",		"template":"Home", "controller":"Home",	"title":"Greeting",		"class":"list"},
+		{"path":"/pages/Categories",		"layout":"layouts/main",		"template":"Categories", "controller":"category",	"title":"Greeting",		"class":"list"},
+		{"path":"/category/Category_product",		"layout":"layouts/main",		"template":"Category_product", "controller":"category_product",	"title":"Greeting",		"class":"list"},
+		{"path":"/MyPOSdemo",		"layout":"layouts/main",		"template":"MyPOSdemo",/* "controller":"category",*/	"title":"Greeting",		"class":"list"},
+		{"path":"/products/productdetail",		"layout":"layouts/main",		"template":"productdetail",/* "controller":"category",*/	"title":"Greeting",		"class":"list"},
+		{"path":"/Login",		"layout":"layouts/main",		"template":"Login", "controller":"Login_Form",	"title":"Greeting",		"class":"list"},
+		{"path":"/NewUser",		"layout":"layouts/main",		"template":"NewUser", "controller":"New_User",	"title":"Greeting",		"class":"list"},
+		
+		{ "otherwise" : "/Home" }
+	]
+}

@@ -1,0 +1,113 @@
+
+<form>
+<div align="center">
+<div id="wrapper1" style="position:absolute;top:20px;bottom:100px; left:3px;right:3px">
+<div id="scroller">
+	<div>
+		<br /><br /><img src="{{app.paths.theme('img/Untitled-1 copy.png')}}" /> 
+    	<img src="{{app.paths.theme('img/LoginIcon.png')}}" width="50px" height="50px" />
+	</div>
+    
+    <div>
+    	<input type="text" placeholder="Search" style="width: 300px; height:30px"/>
+        <img ng-click="Search()"  src="{{ app.paths.theme('img/add_button_1-512.png') }}" style="width: 100px; height:30px"/>
+    </div>
+    <div >
+    	<br /><button style="width:95%" ng-click="Category()">Catergory</button>
+    </div>
+    <div>
+    	<br /><ul class="bxslider" style="position:relative">
+         <li style="position:relative"><img src="{{ app.paths.theme('img/img1.jpg') }}" width="512" height="288" /></li>
+         <li style="position:relative"><img src="{{ app.paths.theme('img/img2.jpg') }}" width="512" height="288" /></li>
+         <li style="position:relative"><img src="{{ app.paths.theme('img/img3.jpg') }}" width="512" height="288" /></li>
+         <li style="position:relative"><img src="{{ app.paths.theme('img/img4.jpg') }}" width="512" height="288" /></li>
+	</ul>
+    </div>
+    <div >
+    	<h3 style="color:#FFF">Top sell products</h3>
+    </div>
+</form>
+<div >
+    <div id="wrapper5" style="position:relative;width:700px;  height:150px;
+	white-space:nowrap;">
+		<div id="scroller" style="position:absolute;height:95%; padding:6px; ">
+        
+        	<div class="" style="width:120px; height:40px; display:inline-block; background-color:red;">
+            	<div>
+                <img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+                <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+            </div>
+           	
+            <div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+            	<img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+            </div>
+			<div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+            	<img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+            </div>            
+            <div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+           		 <img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                 <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div> 
+           	</div>            
+            <div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+           		 <img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                  <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+           </div>            
+            <div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+            	 <img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                  <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+            </div>            
+            <div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+            	 <img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                 <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+            </div>
+             <div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+            	 <img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                  <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+            </div>
+             <div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+            	 <img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                  <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+            </div>
+             <div class="" style="width:120px; height:40px; background-color:#FFF;display:inline-block;">
+            	 <img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/>
+                  <div>
+                <br /><img src="{{app.paths.theme('img/img1.jpg')}}" width="128" height="128"/></div>
+            </div>           
+    	</div>
+        
+    </div>
+  </div>  
+    
+   <div >
+   		<br /><br /><button style="width:95%" ng-click="More()">More</button>
+   </div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+  		$('.bxslider').bxSlider({
+			auto: true,
+  			autoControls: true
+			});
+	});
+	var myHorizScroll = new iScroll("wrapper5",{vScroll:false});
+	var verticalScroll = new iScroll("wrapper1");
+	setInterval(
+		function(){
+			verticalScroll.refresh()},1000);
+	
+	
+</script>

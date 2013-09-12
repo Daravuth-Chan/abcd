@@ -1,0 +1,32 @@
+<div align="center">
+	<h1 style="color:#FFF">Create New User</h1>
+</div>
+<form class="form">
+<div style="color:#FFF">
+    <table border="0">
+    	<tr>
+        	<td><p>Username: </p></td>
+            <td><input ng-model="New.username" type="text"/></td>
+        </tr>
+        <tr>
+        	<td><p>Password: </p></td>
+            <td><input type="password" /></td>
+        </tr>
+        <tr>
+        	<td><p>Confirm Password: </p></td>
+            <td><input ng-model="New.password" type="password"/></td>
+        </tr>
+        <tr>
+        	<td><p>Fullname: </p></td>
+            <td><input ng-model="New.fullname" type="text"/></td>
+        </tr>      
+    </table>
+	<br /><input type="checkbox" id="a">
+    <label for="a">  I accept the terms and agreements of the policy.</label><br />
+</div>
+
+    
+<div align="center">
+	<br /><button ng-click="submitnewuser()">Submit and Register</button>
+</div>
+</form>

@@ -1,0 +1,39 @@
+
+
+	
+	
+		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+			<h3>Menu</h3>
+			<a href="#/Login">Log In</a>
+			<a href="#">Find Events</a>
+			<a href="#">Create Events</a>
+			<a href="#">Retails</a>
+			
+		</nav>
+		
+		<div class="container">
+			
+			<div class="main">
+				<section>
+					<h2>Testing</h2>
+					<!-- Class "cbp-spmenu-open" gets applied to menu -->
+					<button id="showLeft">Menu</button>
+					
+				</section>
+				
+			</div>
+		</div>
+		<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+		<script src="js/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' );
+			
+			showLeft.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeft' );
+			};
+			
+		</script>
+	
+

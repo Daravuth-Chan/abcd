@@ -1,0 +1,194 @@
+<div class="kratos">
+	<div class="marg-top-20">&nbsp;</div>
+	<div class="content">
+		<div class="row" ng-app="myApp">
+			<div class="span6" ng-controller="usingDirective">
+				<div class="row" >
+					<div class="span1">Title</div>
+					<div class="span5"><input type="text" ng-model="title"/> <br /></div>
+				</div>
+				<div class="row">
+					<div class="span1">Description</div>
+					<div class="span5"><textarea type="text" multiple ng-model="des"></textarea>	 <br /></div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="span6">
+						<div class="zippy" zippy-title="Details: {{title}}...">{{des}}</div>
+					</div>
+					<div class="span6">
+						<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+					</div>
+				</div>
+				
+				<hr/>
+				
+				<div class="row">
+				    <!-- <div ng-controller="Ctrl">
+				    	<div class="span6">
+					      	<button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">English</button>
+					      	<button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE">German</button>
+				      	</div>
+				      	<div class="span6">
+					      	<h1 translate="TITLE">dfds</h2>
+					      	<p translate="FOO">dsfsdf</p>
+				      	</div>
+				    </div> -->
+				    <div class="span6">
+				    	Hi My Seng Panhna
+				    </div>
+				</div>
+				
+				
+				
+				
+			</div>
+		</div>
+		<hr />
+		
+		
+	</div>
+</div>
+
+
+	<!-- <script src="http://rawgithub.com/SlexAxton/messageformat.js/master/messageformat.js"></script>
+    <script src="http://rawgithub.com/SlexAxton/messageformat.js/master/locale/de.js"></script>
+    <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+    <script src="http://rawgithub.com/angular/bower-angular-cookies/master/angular-cookies.min.js"></script>
+    <script src="http://rawgithub.com/PascalPrecht/bower-angular-translate/master/angular-translate.min.js"></script>
+    <script src="http://rawgithub.com/PascalPrecht/bower-angular-translate-interpolation-messageformat/master/angular-translate-interpolation-messageformat.min.js"></script>
+    <script src="http://rawgithub.com/PascalPrecht/bower-angular-translate-storage-cookie/master/angular-translate-storage-cookie.min.js"></script>
+    <script src="http://rawgithub.com/PascalPrecht/bower-angular-translate-storage-local/master/angular-translate-storage-local.min.js"></script>
+    <script src="http://rawgithub.com/PascalPrecht/bower-angular-translate-loader-static-files/master/angular-translate-loader-static-files.min.js"></script>
+    <script src="http://rawgithub.com/PascalPrecht/bower-angular-translate-handler-log/master/angular-translate-handler-log.min.js"></script>
+    <script src="script.js"></script> -->
+
+        <div id="fb-root"></div>
+<script>
+var accessToken="Not Yet Take";
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '226068904210479', // App ID
+    channelUrl : 'http://absautomotive.com.kh/index/product/index', // Channel File
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
+
+	// Function to handle the response
+var handleResponse = function(response) {
+   alert ('You liked the URL: ' + response);
+};
+
+
+FB.ui(
+  {
+    method: 'feed',
+    name: 'Facebook Dialogs',
+    link: 'https://developers.facebook.com/docs/reference/dialogs/',
+    picture: 'http://fbrell.com/f8.jpg',
+    caption: 'Reference Documentation',
+    description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+  },
+  function(response) {
+  	// alert('panhna');
+    if (response && response.post_id) {
+      // alert('Post was published.');
+    } else {
+      // alert('Post was not published.');
+    }
+  }
+);
+
+// At some point, you no longer want to be notified, and unsubscribe
+FB.Event.unsubscribe('edge.create', handleResponse);
+
+  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
+  // for any authentication related change, such as login, logout or session refresh. This means that
+  // whenever someone who was previously logged out tries to log in again, the correct case below 
+  // will be handled. 
+  FB.Event.subscribe('auth.authResponseChange', function(response) {
+    // Here we specify what we do with the response anytime this event occurs. 
+    if (response.status === 'connected') {
+      // The response object is returned with a status field that lets the app know the current
+      // login status of the person. In this case, we're handling the situation where they 
+      // have logged in to the app.
+      accessToken = response.authResponse.accessToken;
+      testAPI();
+      
+    } else if (response.status === 'not_authorized') {
+      // In this case, the person is logged into Facebook, but not into the app, so we call
+      // FB.login() to prompt them to do so. 
+      // In real-life usage, you wouldn't want to immediately prompt someone to login 
+      // like this, for two reasons:
+      // (1) JavaScript created popup windows are blocked by most browsers unless they 
+      // result from direct interaction from people using the app (such as a mouse click)
+      // (2) it is a bad experience to be continually prompted to login upon page load.
+      FB.login();
+    } else {
+      // In this case, the person is not logged into Facebook, so we call the login() 
+      // function to prompt them to do so. Note that at this stage there is no indication
+      // of whether they are logged into the app. If they aren't then they'll see the Login
+      // dialog right after they log in to Facebook. 
+      // The same caveats as above apply to the FB.login() call here.
+      FB.login();
+    }
+  });
+  
+  	
+	  // FB.getLoginStatus(function(response) {
+// 	  	
+	  	// alert("Access TOken : " + accessToken);
+		  // if (response.status === 'connected') {
+		    // // the user is logged in and has authenticated your
+		    // // app, and response.authResponse supplies
+		    // // the user's ID, a valid access token, a signed
+		    // // request, and the time the access token 
+		    // // and signed request each expire
+		    // var uid = response.authResponse.userID;
+		    // accessToken = response.authResponse.accessToken;
+		    // alert("Access TOken : " + accessToken);
+		    // testAPI();
+		  // } else if (response.status === 'not_authorized') {
+		    // // the user is logged in to Facebook, 
+		    // // but has not authenticated your app
+		    // FB.login();
+		    // testAPI();
+		    	// //alert("Access TOken : " + accessToken);
+		  // } else {
+		    // // the user isn't logged in to Facebook.
+		  // }
+	 // });
+	 
+	 
+  
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+   js.src = "//connect.facebook.net/en_US/all.js";
+   ref.parentNode.insertBefore(js, ref);
+  }(document));
+
+  // Here we run a very simple test of the Graph API after login is successful. 
+  // This testAPI() function is only called in those cases. 
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Good to see you, ' + response.name + ' : ' + response.id + ' : ' + accessToken);
+    });
+  }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
+  present a graphical Login button that triggers the FB.login() function when clicked.
+
+  Learn more about options for the login button plugin:
+  /docs/reference/plugins/login/ -->
+        
+
+

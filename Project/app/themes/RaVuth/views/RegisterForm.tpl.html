@@ -1,0 +1,98 @@
+<html>
+    <title>
+    	Cont3nt Registry Form
+    </title>
+    <head>
+    	<h1 style = "color:white;">Register Form</h1>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/> 
+    </head>
+    <body>
+    	<h3 style = "color:white;">Basic Information</h3>
+        
+            <form class="form-horizontal">
+             <div class="row">   
+             
+             	<div class="span4">
+                    <div class="control-group">
+                         <label class="control-label">Name</label>
+                         <div class="controls">
+                             <input type="text" id="inputname" placeholder="Name" ng-model="data.name" >
+                         </div>
+                    </div>
+                 </div>
+                
+                <div class="span4">
+                    <div class="control-group">
+                        <label class="control-label">Location</label>
+                        <div class="controls">
+                            <input type="text" id="inputlocation" placeholder="Address" ng-model = "data.location" >
+                        </div>
+                    </div>
+                </div>
+          
+             </div>
+            <div class = "row">
+                <div class = "span4"> 
+
+                    <div class="control-group">
+                        <label class ="control-label">City</label>
+                         <div class="controls">
+                             <input type="text" id = "inputcity" placeholder="City" ng-model = "data.city" >
+                                   
+                        </div>
+                    </div>
+                </div>      
+                    
+                <div class = "span4">   
+                    <div class="control-group">
+                         <label class ="control-label">Country</label>
+                           <div class="controls">
+                                  <input type="text" id = "inputcountry" placeholder="Country" ng-model = "data.country" >
+                                   
+                            </div>
+                    </div>
+                 </div> 
+            </div>
+            <div class = "row">
+                <div class = "span4">
+                    <div class = "control-group">
+
+                     <label class = "control-label">Biography</label>
+                     <div class = "controls">
+                         <textarea rows = "4"></textarea>
+                     </div>
+                    </div>
+                     
+                </div>
+            </div>
+            
+                
+            </form>
+          
+        <h3 style = "color:white;">User Account</h3>
+        	<form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">Username</label>
+                    <div class="controls">
+                        <input type="text" id="inputusername" placeholder="Username" ng-model = "data.username" >
+                        
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class ="control-label">Password</label>
+                    <div class="controls">
+                        <input type="password" id = "inputpsw" ng-model = "data.password" >
+                        
+                    </div>
+                </div>
+               	<div class="control-group">
+                    <label class ="control-label">Confirm Password</label>
+                    <div class="controls">
+                        <input type="password" id = "inputconpsw" ng-model = "data.confirmpassword" >
+                        
+                    </div>
+                </div>
+            </form>
+            <button class="btn btn-small" ng-click = adddata(data)>Submit</button>
+    </body>
+</html>

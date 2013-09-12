@@ -1,0 +1,10 @@
+<!doctype html>
+<html ng-app>
+  <body>
+    <form>
+      userType: <input name="input" ng-model="userType" required>
+      <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+      <h1 style = "color:white;">userType = {{userType}}</h1><br>
+     </form>
+  </body>
+</html>

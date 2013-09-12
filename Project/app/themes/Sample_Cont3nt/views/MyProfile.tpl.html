@@ -1,0 +1,73 @@
+
+<div id="wrapper5" style="position:absolute;bottom:100px;top:40px;">
+<div id="scroller">
+<form class="form-horizonal">
+	<h1>
+    	My Profile
+    </h1>
+    <div>
+    	<div class="span1">
+        	<a style="color:#FFF">Forum</a>
+        </div>
+    </div>
+    <div >
+        <select>
+        	<option value="">Select Forum</option>
+        </select>
+    </div>
+</form>
+<form class="form-horizontal">
+	<h3>
+    	Basic Information
+    </h3>
+    <div >
+    	<div class="span1">
+        	<a style="color:#FFF" >Fullname</a>
+             <br /><br /><a style="color:#FFF">location</a>
+             <br /><br /><a style="color:#FFF">Sex</a>
+             <br /><br /><a style="color:#FFF">Country</a>
+        </div>
+    </div>
+    <div>
+    	<div class="span2">
+        	 <a style="color:#FFF" >{{Profile.fullname}}</a>
+             <br /><br /><a style="color:#FFF">{{Profile.location}}</a>
+             <br /><br /><a style="color:#FFF">{{Profile.sex}}</a>
+             <br /><br /><a style="color:#FFF">{{Profile.country}}</a>
+        </div>
+    </div>
+      
+</form>
+
+<form class="form-horizontal">
+	<h3>
+    	<br /><br /><br /><br />Account Information
+    </h3>
+    <div class="span1">
+    	<a style="color:#FFF">Username</a>
+        <br /><br /><a style="color:#FFF">Password</a>
+    </div>
+    <div class="span2">
+        <a style="color:#FFF" ng-click="changeusername()">{{Profile.username}}</a>
+        <br /><br /><a style="color:#FFF"  ng-click="changepassword()">{{Profile.password}}</a>
+    </div>
+</form>
+
+<form>
+	<h3>
+    	<br /><br />My avatar
+    </h3>
+    <img  ng-src="{{ app.paths.theme('img/images/pic2.jpg') }}" width="512" height="512" />
+    <br /><br /><button>Change</button>
+</form>
+</div>
+</div>
+
+<script type="text/javascript">
+var myScroll = new iScroll('wrapper5');
+	setInterval(
+		function(){
+			myScroll.refresh()
+		}
+		,1000);
+</script>
